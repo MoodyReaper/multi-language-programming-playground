@@ -1,0 +1,154 @@
+name: Pull Request or Push to master
+
+on:
+  pull_request: {}
+  push:
+    branches: [master]
+  workflow_dispatch: {}
+
+concurrency:
+  group: ${{ github.head_ref || github.run_id }}
+  cancel-in-progress: true
+
+permissions: {}
+
+jobs:
+  trunk_check:
+    name: Trunk Check
+    runs-on: ubuntu-latest
+    permissions:
+      checks: write # For Trunk to post annotations
+      contents: read
+    steps:
+      - name: Checkout
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+      - name: Trunk Check
+        uses: trunk-io/trunk-action@b61eb5749343e65e59ef104575a328b59f7285df # v1.1.4
+
+  detect_changes:
+    name: Detect Changes
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    outputs:
+      go: ${{ steps.filter.outputs.go }}
+      python: ${{ steps.filter.outputs.python }}
+      rust: ${{ steps.filter.outputs.rust }}
+      typescript: ${{ steps.filter.outputs.typescript }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+      - uses: dorny/paths-filter@4512585405083f25c027a35db413c2b3b9006d50 # v2.11.1
+        id: filter
+        with:
+          filters: |
+            go:
+              - 'go/**'
+            python:
+              - 'python/**'
+            rust:
+              - 'rust/**'
+            typescript:
+              - 'typescript/**'
+
+  go_build_check:
+    name: Go Build Check
+    needs: detect_changes
+    if: ${{ needs.detect_changes.outputs.go == 'true' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: go
+    steps:
+      - name: Checkout
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+      - name: Setup Go
+        uses: actions/setup-go@fac708d6674e30b6ba41289acaab6d4b75aa0753 # v4.0.1
+        with:
+          go-version: 1.20.5
+      - name: Run build check
+        run: go build -o bin/ src/main.go
+      - name: Run execution check
+        run: go run src/main.go
+        timeout-minutes: 1
+
+  python_build_check:
+    name: Python Build Check
+    needs: detect_changes
+    if: ${{ needs.detect_changes.outputs.python == 'true' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: python
+    steps:
+      - name: Checkout
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+      - name: Setup Python
+        uses: actions/setup-python@bd6b4b6205c4dbad673328db7b31b7fab9e241c0 # v4.6.1
+        with:
+          python-version: 3.11.4
+      - name: Setup Poetry
+        uses: abatilo/actions-poetry@192395c0d10c082a7c62294ab5d9a9de40e48974 # v2.3.0
+        with:
+          poetry-version: 1.5.1
+      - name: Install package dependencies
+        run: poetry install
+      - name: Run build check
+        run: poetry build
+      - name: Run execution check
+        run: poetry run python src/main.py
+        timeout-minutes: 1
+
+  rust_build_check:
+    name: Rust Build Check
+    needs: detect_changes
+    if: ${{ needs.detect_changes.outputs.rust == 'true' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: rust
+    steps:
+      - name: Checkout
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+      - name: Setup Rust
+        uses: dtolnay/rust-toolchain@0e66bd3e6b38ec0ad5312288c83e47c143e6b09e
+        with:
+          toolchain: 1.70.0
+      - name: Run build check
+        run: cargo build --locked --verbose
+      - name: Run execution check
+        run: cargo run
+        timeout-minutes: 1
+
+  typescript_build_check:
+    name: TypeScript Build Check
+    needs: detect_changes
+    if: ${{ needs.detect_changes.outputs.typescript == 'true' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    defaults:
+      run:
+        working-directory: typescript
+    steps:
+      - name: Checkout
+        uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
+      - name: Setup NodeJS
+        uses: actions/setup-node@e33196f7422957bea03ed53f6fbb155025ffc7b8 # v3.7.0
+        with:
+          node-version: 20.3.1
+      - name: Install package dependencies
+        run: npm ci
+      - name: Run lint check
+        run: npm run lint
+      - name: Run build check
+        run: npm run dist:build
+      - name: Run execution check
+        run: npm start
+        timeout-minutes: 1

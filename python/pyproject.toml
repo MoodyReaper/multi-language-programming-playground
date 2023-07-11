@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "playground-python"
+version = "0.1.0"
+description = "Programming playground (Python)"
+keywords = ["programming", "playground", "python"]
+homepage = "https://github.com/MoodyReaper/multi-language-programming-playground#readme"
+repository = "https://github.com/MoodyReaper/multi-language-programming-playground.git"
+license = "WTFPL"
+authors = ["Moody Reaper <wtf-email-is-required@localhost.void>"]
+classifiers = ["Private :: Do Not Upload"]
+packages = [{ include = "src", from = "." }]
+
+[tool.poetry.dependencies]
+python = "3.11.4"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

@@ -1,0 +1,2 @@
+[alias]
+dev = "watch --quiet --clear --watch src/ --exec run"

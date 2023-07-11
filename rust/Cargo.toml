@@ -1,0 +1,14 @@
+[package]
+name = "playground-rust"
+version = "0.1.0"
+description = "Programming playground (Rust)"
+keywords = ["programming", "playground", "rust"]
+homepage = "https://github.com/MoodyReaper/multi-language-programming-playground#readme"
+repository = "https://github.com/MoodyReaper/multi-language-programming-playground.git"
+license = "WTFPL"
+authors = ["Moody Reaper"]
+publish = false
+rust-version = "1.70.0"
+edition = "2021"
+
+[dependencies]
