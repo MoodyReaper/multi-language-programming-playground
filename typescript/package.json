@@ -29,7 +29,7 @@
     "watch:ts": "tsc --watch"
   },
   "devDependencies": {
-    "@tsconfig/node20": "^1.0.2",
+    "@tsconfig/node20": "^20.1.0",
     "@tsconfig/strictest": "^2.0.1",
     "@types/node": "^20.3.1",
     "@typescript-eslint/eslint-plugin": "^5.61.0",
