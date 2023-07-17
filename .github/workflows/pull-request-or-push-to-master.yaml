@@ -23,7 +23,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@c85c95e3d7251135ab7dc9ce3241c5835cc595a9 # v3.5.3
       - name: Trunk Check
-        uses: trunk-io/trunk-action@b61eb5749343e65e59ef104575a328b59f7285df # v1.1.4
+        uses: trunk-io/trunk-action@23e0471bab18ab409d9f59e70283f1d9a29f3de1 # v1.1.5
 
   detect_changes:
     name: Detect Changes
