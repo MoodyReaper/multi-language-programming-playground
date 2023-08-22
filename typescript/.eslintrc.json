@@ -9,8 +9,8 @@
     "plugin:@typescript-eslint/recommended",
     "plugin:@typescript-eslint/recommended-requiring-type-checking",
     "plugin:@typescript-eslint/strict",
-    // "plugin:import/recommended",
-    // "plugin:import/typescript",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
     "plugin:n/recommended",
     "plugin:promise/recommended",
     "standard-with-typescript",
@@ -23,10 +23,7 @@
     "ecmaVersion": 2022,
     "sourceType": "module"
   },
-  // TODO: fix "import/*" issue: TypeError [ERR_INVALID_ARG_TYPE]: The "path" argument must be of type string. Received an instance of Array
-  // https://github.com/import-js/eslint-plugin-import/issues/2751
-  // "plugins": ["@typescript-eslint", "import", "n", "promise", "prettier"],
-  "plugins": ["@typescript-eslint", "n", "promise", "prettier"],
+  "plugins": ["@typescript-eslint", "import", "n", "promise", "prettier"],
   "root": true,
   "rules": {
     "n/no-missing-import": 0,
