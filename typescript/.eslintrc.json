@@ -1,14 +1,14 @@
 {
+  "$schema": "https://json.schemastore.org/eslintrc",
   "env": {
     "es2022": true,
-    "node": true
+    "node": true // Backend
   },
   "extends": [
+    // General
     "eslint:recommended",
-    "plugin:@typescript-eslint/eslint-recommended",
-    "plugin:@typescript-eslint/recommended",
-    "plugin:@typescript-eslint/recommended-requiring-type-checking",
-    "plugin:@typescript-eslint/strict",
+    "plugin:@typescript-eslint/strict-type-checked",
+    "plugin:@typescript-eslint/stylistic-type-checked",
     "plugin:import/recommended",
     "plugin:import/typescript",
     "plugin:n/recommended",
@@ -16,19 +16,18 @@
     "standard-with-typescript",
     "plugin:prettier/recommended"
   ],
+  "ignorePatterns": ["node_modules/", "dist/"],
   "overrides": [],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
-    "project": "./tsconfig.json",
-    "ecmaVersion": 2022,
-    "sourceType": "module"
+    "project": "./tsconfig.json"
   },
-  "plugins": ["@typescript-eslint", "import", "n", "promise", "prettier"],
   "root": true,
   "rules": {
+    // General
     "n/no-missing-import": 0,
-    // "@typescript-eslint/explicit-function-return-type": 0,
-    // "@typescript-eslint/strict-boolean-expressions": 0,
+    "@typescript-eslint/explicit-function-return-type": 0,
+    "@typescript-eslint/strict-boolean-expressions": 0,
     "max-params": ["error", 8],
     "no-param-reassign": [
       "error",
@@ -71,8 +70,8 @@
   },
   "settings": {
     "import/resolver": {
-      "node": "true",
-      "typescript": "true"
+      "node": true,
+      "typescript": true
     }
   }
 }
