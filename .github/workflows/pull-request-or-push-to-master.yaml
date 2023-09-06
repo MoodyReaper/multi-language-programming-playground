@@ -19,6 +19,7 @@ jobs:
     permissions:
       checks: write # For Trunk to post annotations
       contents: read
+    timeout-minutes: 5
     steps:
       - name: Checkout
         uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4.0.0
@@ -35,6 +36,7 @@ jobs:
       python: ${{ steps.filter.outputs.python }}
       rust: ${{ steps.filter.outputs.rust }}
       typescript: ${{ steps.filter.outputs.typescript }}
+    timeout-minutes: 2
     steps:
       - name: Checkout
         uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4.0.0
@@ -61,6 +63,7 @@ jobs:
     defaults:
       run:
         working-directory: go
+    timeout-minutes: 5
     steps:
       - name: Checkout
         uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4.0.0
@@ -73,7 +76,6 @@ jobs:
         run: go build -o bin/ src/main.go
       - name: Run execution check
         run: go run src/main.go
-        timeout-minutes: 1
 
   python_build_check:
     name: Python Build Check
@@ -85,6 +87,7 @@ jobs:
     defaults:
       run:
         working-directory: python
+    timeout-minutes: 5
     steps:
       - name: Checkout
         uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4.0.0
@@ -104,7 +107,6 @@ jobs:
         run: poetry build
       - name: Run execution check
         run: poetry run python src/main.py
-        timeout-minutes: 1
 
   rust_build_check:
     name: Rust Build Check
@@ -116,6 +118,7 @@ jobs:
     defaults:
       run:
         working-directory: rust
+    timeout-minutes: 5
     steps:
       - name: Checkout
         uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4.0.0
@@ -128,7 +131,6 @@ jobs:
         run: cargo build --locked --verbose
       - name: Run execution check
         run: cargo run
-        timeout-minutes: 1
 
   typescript_build_check:
     name: TypeScript Build Check
@@ -140,6 +142,7 @@ jobs:
     defaults:
       run:
         working-directory: typescript
+    timeout-minutes: 5
     steps:
       - name: Checkout
         uses: actions/checkout@3df4ab11eba7bda6032a0b82a6bb43b11571feac # v4.0.0
@@ -157,4 +160,3 @@ jobs:
         run: npm run dist:build
       - name: Run execution check
         run: npm start
-        timeout-minutes: 1
