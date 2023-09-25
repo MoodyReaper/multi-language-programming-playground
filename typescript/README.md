@@ -24,7 +24,3 @@
 | `start`      | Build and run                    |
 | `watch:js`   | Watch JS files                   |
 | `watch:ts`   | Watch TS files                   |
-
-## TODO
-
-- Upgrade `@types/node` to `20.7.0` when available
