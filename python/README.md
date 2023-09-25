@@ -11,10 +11,10 @@
 
 ## Development / System dependencies
 
-| System dependency                   | Minimum version | Description              |
-| :---------------------------------- | :-------------- | :----------------------- |
-| [Poetry](https://python-poetry.org) | `1.4+`          | `Python` package manager |
-| [Python](https://python.org)        | `3.11+`         | `Python` runtime         |
+| System dependency                   | Required version | Description              |
+| :---------------------------------- | :--------------- | :----------------------- |
+| [Poetry](https://python-poetry.org) | `1.6.x`          | `Python` package manager |
+| [Python](https://python.org)        | `3.11.5`         | `Python` runtime         |
 
 ## Configuration
 

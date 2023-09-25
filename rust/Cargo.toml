@@ -8,7 +8,7 @@ repository = "https://github.com/MoodyReaper/multi-language-programming-playgrou
 license = "WTFPL"
 authors = ["Moody Reaper"]
 publish = false
-rust-version = "1.70.0"
+rust-version = "1.72.1"
 edition = "2021"
 
 [dependencies]

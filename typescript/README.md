@@ -8,10 +8,10 @@
 
 ## Development / System dependencies
 
-| System dependency             | Minimum version | Description            |
-| :---------------------------- | :-------------- | :--------------------- |
-| [Node.js](https://nodejs.org) | `20.3+`         | `JS` runtime           |
-| [npm](https://npmjs.com)      | `9.6+`          | `Node` package manager |
+| System dependency             | Required version | Description            |
+| :---------------------------- | :--------------- | :--------------------- |
+| [Node.js](https://nodejs.org) | `20.7.0`         | `JS` runtime           |
+| [npm](https://npmjs.com)      | `10.x`           | `Node` package manager |
 
 ## NPM script commands
 
@@ -24,3 +24,7 @@
 | `start`      | Build and run                    |
 | `watch:js`   | Watch JS files                   |
 | `watch:ts`   | Watch TS files                   |
+
+## TODO
+
+- Upgrade `@types/node` to `20.7.0` when available

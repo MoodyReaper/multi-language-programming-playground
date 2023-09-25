@@ -8,6 +8,6 @@
 
 ## Development / System dependencies
 
-| System dependency    | Minimum version | Description           |
-| :------------------- | :-------------- | :-------------------- |
-| [Go](https://go.dev) | `1.20+`         | `Go` language toolkit |
+| System dependency    | Required version | Description           |
+| :------------------- | :--------------- | :-------------------- |
+| [Go](https://go.dev) | `1.21.1`         | `Go` language toolkit |

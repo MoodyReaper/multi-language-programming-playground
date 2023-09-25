@@ -70,7 +70,7 @@ jobs:
       - name: Setup Go
         uses: actions/setup-go@93397bea11091df50f3d7e59dc26a7711a8bcfbe # v4.1.0
         with:
-          go-version: 1.20.5
+          go-version: 1.21.1
           cache-dependency-path: go/go.sum
       - name: Run build check
         run: go build -o bin/ src/main.go
@@ -94,13 +94,13 @@ jobs:
       - name: Setup Python
         uses: actions/setup-python@61a6322f88396a6271a6ee3565807d608ecaddd1 # v4.7.0
         with:
-          python-version: 3.11.4
+          python-version: 3.11.5
           cache: poetry
           cache-dependency-path: python/poetry.lock
       - name: Setup Poetry
         uses: abatilo/actions-poetry@192395c0d10c082a7c62294ab5d9a9de40e48974 # v2.3.0
         with:
-          poetry-version: 1.5.1
+          poetry-version: 1.6.1
       - name: Install package dependencies
         run: poetry install
       - name: Run build check
@@ -125,7 +125,7 @@ jobs:
       - name: Setup Rust
         uses: dtolnay/rust-toolchain@1482605bfc5719782e1267fd0c0cc350fe7646b8
         with:
-          toolchain: 1.70.0
+          toolchain: 1.72.1
           # TODO: check whether caching option was added
       - name: Run build check
         run: cargo build --locked --verbose
@@ -149,7 +149,7 @@ jobs:
       - name: Setup NodeJS
         uses: actions/setup-node@5e21ff4d9bc1a8cf6de233a3057d20ec6b3fb69d # v3.8.1
         with:
-          node-version: 20.3.1
+          node-version: 20.7.0
           cache: npm
           cache-dependency-path: typescript/package-lock.json
       - name: Install package dependencies

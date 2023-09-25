@@ -11,7 +11,7 @@ classifiers = ["Private :: Do Not Upload"]
 packages = [{ include = "src", from = "." }]
 
 [tool.poetry.dependencies]
-python = "3.11.4"
+python = "3.11.5"
 
 [build-system]
 requires = ["poetry-core"]
