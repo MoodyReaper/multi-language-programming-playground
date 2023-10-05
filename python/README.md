@@ -20,9 +20,14 @@
 
 ### Poetry
 
-- Set the following
-  [`Poetry` configuration](https://python-poetry.org/docs/configuration/#config-directory) parameter
-  in order to create a virtual environment in the project folder:
+#### Create a virtual environment in the project folder
+
+Set [`virtualenvs.in-project`](https://python-poetry.org/docs/configuration#virtualenvsin-project)
+configuration parameter:
+
+- By running command: `poetry config virtualenvs.in-project true`
+- By editing [configuration](https://python-poetry.org/docs/configuration/#config-directory)
+  manually:
   ```toml
   [virtualenvs]
   in-project = true
