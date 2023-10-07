@@ -154,8 +154,6 @@ jobs:
           cache-dependency-path: typescript/package-lock.json
       - name: Install package dependencies
         run: npm ci
-      - name: Run lint check
-        run: npm run lint
       - name: Run build check
         run: npm run dist:build
       - name: Run execution check

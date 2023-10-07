@@ -28,7 +28,7 @@ lint:
     - clippy@1.72.1
     - rustfmt@1.72.1
     # Code - TypeScript
-    # - eslint@8.50.0 # TODO
+    - eslint@8.50.0
     - sort-package-json@2.5.1
     # File - Markdown
     - markdownlint@0.37.0
@@ -52,6 +52,11 @@ lint:
     - trufflehog@3.57.0
     # Spell check
     - cspell@7.3.6
+  definitions:
+    - name: eslint
+      commands:
+        - name: lint
+          run_from: ${root_or_parent_with(tsconfig.json)}
 runtimes:
   enabled:
     - go@1.21.1
