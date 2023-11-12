@@ -56,7 +56,7 @@ jobs:
   go_build_check:
     name: Go Build Check
     needs: detect_changes
-    if: ${{ needs.detect_changes.outputs.go == 'true' }}
+    if: ${{ needs.detect_changes.outputs.go == 'true' || github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -80,7 +80,9 @@ jobs:
   python_build_check:
     name: Python Build Check
     needs: detect_changes
-    if: ${{ needs.detect_changes.outputs.python == 'true' }}
+    if:
+      # prettier-ignore
+      ${{ needs.detect_changes.outputs.python == 'true' || github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -111,7 +113,8 @@ jobs:
   rust_build_check:
     name: Rust Build Check
     needs: detect_changes
-    if: ${{ needs.detect_changes.outputs.rust == 'true' }}
+    if:
+      ${{ needs.detect_changes.outputs.rust == 'true' || github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
@@ -135,7 +138,9 @@ jobs:
   typescript_build_check:
     name: TypeScript Build Check
     needs: detect_changes
-    if: ${{ needs.detect_changes.outputs.typescript == 'true' }}
+    if:
+      # prettier-ignore
+      ${{ needs.detect_changes.outputs.typescript == 'true' || github.event_name == 'workflow_dispatch' }}
     runs-on: ubuntu-latest
     permissions:
       contents: read
