@@ -14,7 +14,7 @@
 | System dependency                   | Required version | Description              |
 | :---------------------------------- | :--------------- | :----------------------- |
 | [Poetry](https://python-poetry.org) | `1.6.x`          | `Python` package manager |
-| [Python](https://python.org)        | `3.11.5`         | `Python` runtime         |
+| [Python](https://python.org)        | `3.12.0`         | `Python` runtime         |
 
 ## Configuration
 
@@ -32,3 +32,9 @@ configuration parameter:
   [virtualenvs]
   in-project = true
   ```
+
+#### Update dependencies and bump their versions
+
+- Install [`up`](https://github.com/MousaZeidBaker/poetry-plugin-up) plugin:
+  `poetry self add poetry-plugin-up`
+- Update dependencies to latest available compatible versions: `poetry up --latest`
