@@ -9,6 +9,7 @@ gruntfuggly
 Hocevar
 liveshare
 markdownlint
+mypy
 oderwat
 runtimes
 scrollback
