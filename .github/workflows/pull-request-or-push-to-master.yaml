@@ -91,16 +91,16 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@b4ffde65f46336ab88eb53be808477a3936bae11 # v4.1.1
+      - name: Setup Poetry
+        uses: abatilo/actions-poetry@192395c0d10c082a7c62294ab5d9a9de40e48974 # v2.3.0
+        with:
+          poetry-version: 1.6.1
       - name: Setup Python
         uses: actions/setup-python@65d7f2d534ac1bc67fcd62888c5f4f3d2cb2b236 # v4.7.1
         with:
           python-version: 3.12.0
           cache: poetry
           cache-dependency-path: python/poetry.lock
-      - name: Setup Poetry
-        uses: abatilo/actions-poetry@192395c0d10c082a7c62294ab5d9a9de40e48974 # v2.3.0
-        with:
-          poetry-version: 1.6.1
       - name: Install package dependencies
         run: poetry install
       - name: Run build check
