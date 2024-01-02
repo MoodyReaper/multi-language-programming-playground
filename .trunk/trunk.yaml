@@ -13,7 +13,7 @@ plugins:
 lint:
   enabled:
     # Code - Go
-    - gofmt@1.21.1
+    - gofmt@1.21.5
     - gokart@0.5.1
     - golangci-lint@1.55.2
     # Code - multi-language
@@ -25,8 +25,8 @@ lint:
     - mypy@1.8.0
     - ruff@0.1.9
     # Code - Rust
-    - clippy@1.72.1
-    - rustfmt@1.72.1
+    - clippy@1.75.0
+    - rustfmt@1.75.0
     # Code - TypeScript
     - eslint@8.56.0
     - sort-package-json@2.6.0
@@ -45,13 +45,13 @@ lint:
     # Security - dependencies
     - osv-scanner@1.5.0
     # Security - general
-    - checkov@3.1.46
+    - checkov@3.1.50
     - trivy@0.48.1
     # Security - secrets
     - gitleaks@8.18.1
     - trufflehog@3.63.7
     # Spell check
-    - cspell@8.2.4
+    - cspell@8.3.1
   definitions:
     - name: eslint
       commands:
@@ -59,10 +59,10 @@ lint:
           run_from: ${root_or_parent_with(tsconfig.json)}
 runtimes:
   enabled:
-    - go@1.21.1
-    - node@20.7.0
-    - python@3.11.1 # TODO: upgrade to 3.12.0 when available
-    - rust@1.72.1
+    - go@1.21.5
+    - node@20.10.0
+    - python@3.11.1 # TODO: upgrade to 3.12.1 when available
+    - rust@1.75.0
 actions:
   enabled:
     - trunk-announce

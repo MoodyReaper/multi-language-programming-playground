@@ -46,4 +46,4 @@ updates:
           - '*eslint*'
     ignore:
       - dependency-name: '@types/node'
-        versions: ['>20.7.0']
+        versions: ['>20.10']

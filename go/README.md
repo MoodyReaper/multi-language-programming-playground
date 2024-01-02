@@ -10,4 +10,4 @@
 
 | System dependency    | Required version | Description           |
 | :------------------- | :--------------- | :-------------------- |
-| [Go](https://go.dev) | `1.21.1`         | `Go` language toolkit |
+| [Go](https://go.dev) | `1.21.5`         | `Go` language toolkit |

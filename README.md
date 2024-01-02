@@ -36,12 +36,12 @@ Additional features:
 
 Defined runtimes:
 
-| Runtime  | Version  | Repository                                    |
-| :------- | :------- | :-------------------------------------------- |
-| `golang` | `1.21.1` | https://github.com/kennyp/asdf-golang         |
-| `python` | `3.12.0` | https://github.com/asdf-community/asdf-python |
-| `rust`   | `1.72.1` | https://github.com/code-lever/asdf-rust       |
-| `nodejs` | `20.7.0` | https://github.com/asdf-vm/asdf-nodejs        |
+| Runtime  | Version   | Repository                                    |
+| :------- | :-------- | :-------------------------------------------- |
+| `golang` | `1.21.5`  | https://github.com/kennyp/asdf-golang         |
+| `python` | `3.12.1`  | https://github.com/asdf-community/asdf-python |
+| `rust`   | `1.75.0`  | https://github.com/code-lever/asdf-rust       |
+| `nodejs` | `20.10.0` | https://github.com/asdf-vm/asdf-nodejs        |
 
 ### Trunk
 

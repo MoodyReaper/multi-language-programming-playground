@@ -10,7 +10,7 @@
 
 | System dependency             | Required version | Description            |
 | :---------------------------- | :--------------- | :--------------------- |
-| [Node.js](https://nodejs.org) | `20.7.0`         | `JS` runtime           |
+| [Node.js](https://nodejs.org) | `20.10.0`        | `JS` runtime           |
 | [npm](https://npmjs.com)      | `10.x`           | `Node` package manager |
 
 ## NPM script commands
