@@ -13,7 +13,7 @@
     "plugin:import/typescript",
     "plugin:n/recommended",
     "plugin:promise/recommended",
-    "standard-with-typescript",
+    "love",
     "plugin:prettier/recommended"
   ],
   "ignorePatterns": ["node_modules/", "dist/"],

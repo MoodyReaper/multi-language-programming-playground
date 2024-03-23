@@ -38,10 +38,10 @@ Defined runtimes:
 
 | Runtime  | Version   | Repository                                    |
 | :------- | :-------- | :-------------------------------------------- |
-| `golang` | `1.21.5`  | https://github.com/kennyp/asdf-golang         |
-| `python` | `3.12.1`  | https://github.com/asdf-community/asdf-python |
-| `rust`   | `1.75.0`  | https://github.com/code-lever/asdf-rust       |
-| `nodejs` | `20.10.0` | https://github.com/asdf-vm/asdf-nodejs        |
+| `golang` | `1.22.1`  | https://github.com/kennyp/asdf-golang         |
+| `python` | `3.12.2`  | https://github.com/asdf-community/asdf-python |
+| `rust`   | `1.77.0`  | https://github.com/code-lever/asdf-rust       |
+| `nodejs` | `20.11.1` | https://github.com/asdf-vm/asdf-nodejs        |
 
 ### Trunk
 

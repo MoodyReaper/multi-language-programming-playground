@@ -13,8 +13,8 @@
 
 | System dependency                   | Required version | Description              |
 | :---------------------------------- | :--------------- | :----------------------- |
-| [Poetry](https://python-poetry.org) | `1.7.x`          | `Python` package manager |
-| [Python](https://python.org)        | `3.12.1`         | `Python` runtime         |
+| [Poetry](https://python-poetry.org) | `1.8.x`          | `Python` package manager |
+| [Python](https://python.org)        | `3.12.2`         | `Python` runtime         |
 
 ## Configuration
 

@@ -10,8 +10,8 @@
 
 | System dependency                               | Required version | Description             |
 | :---------------------------------------------- | :--------------- | :---------------------- |
-| [Cargo](https://doc.rust-lang.org/stable/cargo) | `1.75.0`         | `Rust` package manager  |
-| [Rust](https://rust-lang.org)                   | `1.75.0`         | `Rust` language toolkit |
+| [Cargo](https://doc.rust-lang.org/stable/cargo) | `1.77.0`         | `Rust` package manager  |
+| [Rust](https://rust-lang.org)                   | `1.77.0`         | `Rust` language toolkit |
 
 ## Recommended packages
 
