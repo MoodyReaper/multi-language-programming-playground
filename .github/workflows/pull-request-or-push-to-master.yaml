@@ -67,7 +67,7 @@ jobs:
           # prettier-ignore
           ${{ needs.detect_changes.outputs.typescript == 'true' || github.event_name == 'workflow_dispatch' }}
       - name: Trunk Check
-        uses: trunk-io/trunk-action@f6c5f1b90503c30e02059667dbc247f2257b63c5 # v1.1.15
+        uses: trunk-io/trunk-action@e1234e67a86010d61ddac8d8ebf4b783e2ffd2fa # v2.0.0
 
   go_build_check:
     name: Go Build Check
